@@ -4,18 +4,26 @@ description = "Pymol Toolkit"
 license = {file = "LICENSE"}
 version = "0.0.1"
 readme = "README.md"
-keywords = []
+keywords = ["molecular-graphics", "computational-biology", "computational-chemistry"]
 authors = [{name = "Brad Dallin"}]
-requires-python = ">=3.13"
+requires-python = ">=3.9,<3.10"
 
 [tool.pixi.project]
-channels = ["conda-forge"]
+channels = ["conda-forge", "speleo3"]
 platforms = ["linux-64", "osx-arm64"]
 
 [tool.pixi.dependencies]
+numpy = ">=1.26,<1.27"
+pymol-open-source = ">=3.1.0,<4"
+pymol-psico = ">=4.3.0,<5"
 
 [tool.pixi.pypi-dependencies]
 pymol_toolkit = { path = ".", editable = true }
+apbs-binary = ">=3.4.1.1,<4"
+
+[tool.pixi.tasks]
+updatepath = {cmd = "export PATH=${PATH}:${PIXI_PROJECT_ROOT}/lib/python3.9/site-packages/apbs_binary/bin"}
+updatelib = {cmd = "export DYLD_LIBRARY_PATH=${PIXI_PROJECT_ROOT}/lib/python3.9/site-packages/apbs_binary/lib"}
 
 [tool.pixi.environments]
 default = { solve-group = "default" }
