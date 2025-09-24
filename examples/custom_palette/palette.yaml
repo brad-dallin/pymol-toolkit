@@ -1,0 +1,16 @@
+# Colorblind-friendly color scheme
+colorblind_colors:
+  cb_darkorange: [198, 101,  38]
+  cb_orange:     [220, 162,  55]
+  cb_yellow:     [238, 228,  97]
+  cb_tan:        [218, 205, 130]
+  cb_darkgreen:  [ 54, 117,  59]
+  cb_green:      [ 70, 156, 118]
+  cb_teal:       [ 97, 168, 153]
+  cb_darkblue:   [ 48,  35, 131]
+  cb_blue:       [ 48, 112, 173]
+  cb_lightblue:  [151, 202, 234]
+  cb_darkpurple: [125,  42,  84]
+  cb_purple:     [158,  74, 149]
+  cb_pink:       [191, 108, 120]
+  cb_lightpink:  [193, 125, 165]
