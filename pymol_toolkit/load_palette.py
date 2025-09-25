@@ -40,8 +40,8 @@ class PaletteColor:
 
     Examples
     --------
-        # >>> color = PaletteColor("red", (255, 0, 0))
-        # >>> color = PaletteColor("blue", (0, 0, 255), ["navy"], "009")
+        >>> color = PaletteColor("red", (255, 0, 0))
+        >>> color = PaletteColor("blue", (0, 0, 255), ["navy"], "009")
     """
 
     def __init__(
