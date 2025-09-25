@@ -249,7 +249,7 @@ def apply_palette_colors(
     --------
         # >>> apply_palette_colors("pastel")
         # >>> apply_palette_colors("colorblind", replace_builtin=True)
-        # >>> apply_palette_colors()  # Apply all palettes
+        >>> apply_palette_colors()  # Apply all palettes
     """
     palettes = _get_palettes(palette_name)
 
