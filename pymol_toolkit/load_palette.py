@@ -248,7 +248,6 @@ def apply_palette_colors(
     Examples
     --------
         # >>> apply_palette_colors("pastel")
-        # >>> apply_palette_colors("colorblind", replace_builtin=True)
         >>> apply_palette_colors()  # Apply all palettes
     """
     palettes = _get_palettes(palette_name)
@@ -293,7 +292,7 @@ def add_palette_menu(palette_name: Optional[str] = None) -> None:
     Examples
     --------
         # >>> add_palette_menu("pastel")
-        # >>> add_palette_menu()  # Add all palette menus
+        >>> add_palette_menu()  # Add all palette menus
     """
     palettes = _get_palettes(palette_name)
     for palette in palettes:
