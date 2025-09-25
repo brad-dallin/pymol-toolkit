@@ -20,6 +20,7 @@ pymol-psico = ">=4.3.0,<5"
 [tool.pixi.pypi-dependencies]
 pymol_toolkit = { path = ".", editable = true }
 apbs-binary = ">=3.4.1.1,<4"
+types-pyyaml = ">=6.0.12.20250915,<7"
 
 [tool.pixi.tasks]
 updatepath = {cmd = "export PATH=${PATH}:${PIXI_PROJECT_ROOT}/lib/python3.9/site-packages/apbs_binary/bin"}
