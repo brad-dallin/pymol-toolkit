@@ -84,7 +84,7 @@ class PaletteColor:
         """
         if self.short_code:
             return self.short_code
-        return "".join(str(math.floor(value / 255.0 * 10)) for value in self.rgb)
+        return "".join(str(math.floor(value / 255.1 * 10)) for value in self.rgb)
 
     def get_normalized_rgb(self) -> tuple[float, float, float]:
         """Return RGB values normalized to 0-1 range for PyMOL.
@@ -450,7 +450,6 @@ def find_palette_file() -> Path:
     ]
 
     for path in search_paths:
-        print(path)
         if path.is_file():
             return path
 

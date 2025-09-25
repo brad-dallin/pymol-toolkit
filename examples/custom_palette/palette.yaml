@@ -14,3 +14,14 @@ colorblind_colors:
   cb_purple:     [158,  74, 149]
   cb_pink:       [191, 108, 120]
   cb_lightpink:  [193, 125, 165]
+
+## COLOR PALETTE DEFINITIONS
+pastel_colors:
+  pastel_red:       [243, 177, 175]
+  pastel_orange:    [248, 216, 171]
+  pastel_yellow:    [253, 255, 190]
+  pastel_green:     [213, 254, 197]
+  pastel_lightblue: [176, 244, 253]
+  pastel_blue:      [167, 195, 250]
+  pastel_purple:    [187, 178, 250]
+  pastel_pink:      [246, 200, 251]
