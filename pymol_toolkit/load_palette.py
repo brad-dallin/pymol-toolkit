@@ -113,8 +113,8 @@ class Palette:
 
     Examples
     --------
-        # >>> colors = [PaletteColor("red", (255, 0, 0)), PaletteColor("blue", (0, 0, 255))]
-        # >>> palette = Palette("primary", colors, prefix="p_")
+        >>> colors = [PaletteColor("red", (255, 0, 0)), PaletteColor("blue", (0, 0, 255))]
+        >>> palette = Palette("primary", colors, prefix="p_")
     """
 
     def __init__(self, name: str, colors: list[PaletteColor], prefix: str = "") -> None:
