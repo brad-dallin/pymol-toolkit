@@ -105,7 +105,7 @@ def add_palette_colors(palettes: dict[str, dict[str, list[Any]]]) -> str:
             msg += f"  - Menu for {name} was already added!"
         else:
             all_colors.append(menu_colors)
-            msg += f"\nThe {name} palette is now available:\n"
+            msg += f"\n\nThe {name} palette is now available:\n"
             msg += "\n".join(added_colors)
     return msg
 
