@@ -12,10 +12,14 @@ from __future__ import annotations
 
 import os
 from pathlib import Path
+from typing import TYPE_CHECKING
 
 import pymol  # type: ignore[import-untyped]
 import yaml
 from pymol import cmd
+
+if TYPE_CHECKING:
+    from typing import Any
 
 ####################################################################################################
 ## Define
@@ -47,7 +51,7 @@ def find_palette_file() -> Path:
     raise FileNotFoundError("No palette.yaml found!")
 
 
-def load_palette_colors(yaml_path: str | Path) -> dict[str, list[str, tuple(int, int, int)]]:
+def load_palette_colors(yaml_path: str | Path) -> dict[str, dict[str, list[Any]]]:
     """Load color palette definitions from a YAML file.
 
     Args
@@ -64,7 +68,7 @@ def load_palette_colors(yaml_path: str | Path) -> dict[str, list[str, tuple(int,
     return palette_data
 
 
-def add_palette_colors(palettes: dict[str, list[str, tuple(int, int, int)]]) -> None:
+def add_palette_colors(palettes: dict[str, dict[str, list[Any]]]) -> str:
     """Add palette colors to PyMOL's color definitions.
 
     Args
@@ -77,7 +81,7 @@ def add_palette_colors(palettes: dict[str, list[str, tuple(int, int, int)]]) -> 
 
     Examples
     --------
-        >>> apply_palette_colors({'oranges': {'darkorange': [198, 101, 38]}})  # Apply palette
+        >>> msg = add_palette_colors({'oranges': {'darkorange': [198, 101, 38]}})  # Apply palette
     """
     for name, palette in palettes.items():
         added_colors = []
@@ -97,14 +101,15 @@ def add_palette_colors(palettes: dict[str, list[str, tuple(int, int, int)]]) -> 
             ) from e
 
         if menu_colors in all_colors:
-            print(f"  - Menu for {name} was already added!")
+            msg = f"  - Menu for {name} was already added!"
         else:
             all_colors.append(menu_colors)
-            print(f"\nThe {name} palette is now available:")
-            print("\n".join(added_colors))
+            msg = f"\nThe {name} palette is now available:"
+            msg += "\n".join(added_colors)
+    return msg
 
 
-def _load_yaml(file_path: str | Path) -> dict[str, dict[str, list[int, int, int]]]:
+def _load_yaml(file_path: str | Path) -> dict[str, dict[str, list[Any]]]:
     """Check input values from palette yaml file.
 
     Args
@@ -196,7 +201,7 @@ def _load_yaml(file_path: str | Path) -> dict[str, dict[str, list[int, int, int]
     return validated_data
 
 
-def _get_normalized_rgb(rgb: tuple[int, int, int]) -> tuple[float, float, float]:
+def _get_normalized_rgb(rgb: list[Any]) -> tuple[float, float, float]:
     """Return RGB values normalized to 0-1 range for PyMOL.
 
     Returns
@@ -207,7 +212,7 @@ def _get_normalized_rgb(rgb: tuple[int, int, int]) -> tuple[float, float, float]
     return (r / 255.0, g / 255.0, b / 255.0)
 
 
-def _get_short_code(rgb: tuple[int, int, int]) -> str:
+def _get_short_code(rgb: list[Any]) -> str:
     """Return a 3-digit string approximating the RGB color.
 
     Returns
@@ -229,7 +234,8 @@ if __name__ == "pymol":
     # Load palettes from YAML
     palette_path = find_palette_file()
     palette_colors = load_palette_colors(palette_path)
-    add_palette_colors(palette_colors)
+    msg = add_palette_colors(palette_colors)
+    print(msg)
 
 
 if __name__ == "__main__":
@@ -238,4 +244,5 @@ if __name__ == "__main__":
     # Load palettes from YAML
     palette_path = find_palette_file()
     palette_colors = load_palette_colors(palette_path)
-    add_palette_colors(palette_colors)
+    msg = add_palette_colors(palette_colors)
+    print(msg)
