@@ -1,5 +1,5 @@
 # Colorblind-friendly color scheme
-colorblind_colors:
+colorblind:
   cb_darkorange: [198, 101,  38]
   cb_orange:     [220, 162,  55]
   cb_yellow:     [238, 228,  97]
@@ -16,7 +16,7 @@ colorblind_colors:
   cb_lightpink:  [193, 125, 165]
 
 ## COLOR PALETTE DEFINITIONS
-pastel_colors:
+pastel:
   pastel_red:       [243, 177, 175]
   pastel_orange:    [248, 216, 171]
   pastel_yellow:    [253, 255, 190]
