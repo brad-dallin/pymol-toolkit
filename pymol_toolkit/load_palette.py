@@ -83,6 +83,7 @@ def add_palette_colors(palettes: dict[str, dict[str, list[Any]]]) -> str:
     --------
         >>> msg = add_palette_colors({'oranges': {'darkorange': [198, 101, 38]}})  # Apply palette
     """
+    msg = ""
     for name, palette in palettes.items():
         added_colors = []
         color_tuples = []
@@ -101,10 +102,10 @@ def add_palette_colors(palettes: dict[str, dict[str, list[Any]]]) -> str:
             ) from e
 
         if menu_colors in all_colors:
-            msg = f"  - Menu for {name} was already added!"
+            msg += f"  - Menu for {name} was already added!"
         else:
             all_colors.append(menu_colors)
-            msg = f"\nThe {name} palette is now available:"
+            msg += f"\nThe {name} palette is now available:\n"
             msg += "\n".join(added_colors)
     return msg
 
