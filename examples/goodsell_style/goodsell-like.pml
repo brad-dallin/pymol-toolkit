@@ -38,10 +38,10 @@ bg_color white
 #set show_alpha_checker, 0
 set specular, 0
 set antialias, 2
-set ray_trace_gain, 2
-set ray_trace_mode, 3
+set ray_trace_mode, 1
 set ray_trace_color, black
-set ray_trace_trans_cutoff, 0.05
+set ray_trace_disco_factor, 1
+#set ray_trace_trans_cutoff, 0.5
 set ray_opaque_background, 1
 set ray_transparency_oblique
 set ray_transparency_oblique_power, 0
