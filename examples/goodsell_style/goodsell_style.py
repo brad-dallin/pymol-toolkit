@@ -10,14 +10,8 @@ This module loads color palettes defined in palette.yaml into PyMOL.
 
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
-
-import pymol  # type: ignore[import-untyped]
 from psico.viewing import goodsell_lighting
-from pymol import cmd, stored, util
-
-if TYPE_CHECKING:
-    from typing import Any
+from pymol import cmd, util
 
 ####################################################################################################
 ## Define
@@ -73,17 +67,6 @@ def _set_goodsell_scene() -> None:
     cmd.set("ray_transparency_oblique")
     cmd.set("ray_transparency_oblique_power", 0)
     cmd.set("ray_transparency_contrast", 3)
-
-
-def _get_normalized_rgb(rgb: list[Any]) -> tuple[float, float, float]:
-    """Return RGB values normalized to 0-1 range for PyMOL.
-
-    Returns
-    -------
-        RGB values as floats in 0-1 range.
-    """
-    r, g, b = rgb
-    return (r / 255.0, g / 255.0, b / 255.0)
 
 
 ####################################################################################################
