@@ -1,8 +1,5 @@
 #!/usr/bin/env python3
-"""Module defining custom color palettes for PyMOL molecular visualization.
-
-This module loads color palettes defined in palette.yaml into PyMOL.
-"""
+"""Module defining Goodsell-style spheres for PyMOL molecular visualization."""
 
 ####################################################################################################
 ## Import
