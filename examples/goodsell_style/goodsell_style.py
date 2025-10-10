@@ -60,6 +60,7 @@ def _set_goodsell_scene() -> None:
     cmd.set("ray_trace_gain", 0)
     cmd.set("ray_trace_color", "black")
     cmd.set("ray_trace_disco_factor", 1)
+    cmd.set("ray_trace_gain", 1.5)
     cmd.set("ray_opaque_background", 1)
     cmd.set("ray_transparency_oblique")
     cmd.set("ray_transparency_oblique_power", 0)
