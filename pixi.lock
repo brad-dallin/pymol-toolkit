@@ -3260,7 +3260,7 @@ packages:
 - pypi: ./
   name: pymol-toolkit
   version: 0.0.1
-  sha256: d240c0b570d9ec7032bd5a613b5cf7b6a1037f1d8b1e3d10036fe236118d3412
+  sha256: 15de2cbaf98960b5bef416cb60e049ee64f338032b4681203e61763c759e559d
   requires_python: '>=3.9,<3.10'
   editable: true
 - conda: https://conda.anaconda.org/conda-forge/linux-64/pyqt-5.15.11-py39h08c78a2_1.conda

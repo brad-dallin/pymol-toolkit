@@ -22,9 +22,10 @@ pymol_toolkit = { path = ".", editable = true }
 apbs-binary = ">=3.4.1.1,<4"
 types-pyyaml = ">=6.0.12.20250915,<7"
 
-[tool.pixi.tasks]
-updatepath = {cmd = "export PATH=${PATH}:${PIXI_PROJECT_ROOT}/lib/python3.9/site-packages/apbs_binary/bin"}
-updatelib = {cmd = "export DYLD_LIBRARY_PATH=${PIXI_PROJECT_ROOT}/lib/python3.9/site-packages/apbs_binary/lib"}
+[tool.pixi.activation.env]
+PATH = "${PATH}:${PIXI_PROJECT_ROOT}/lib/python3.9/site-packages/apbs_binary/bin"
+DYLD_LIBRARY_PATH = "${PIXI_PROJECT_ROOT}/lib/python3.9/site-packages/apbs_binary/lib"
+PYMOL_TOOLKIT = "${PIXI_PROJECT_ROOT}/pymol_toolkit"
 
 [tool.pixi.environments]
 default = { solve-group = "default" }

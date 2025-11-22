@@ -1,0 +1,20 @@
+#!/usr/bin/env pymol
+# -*- coding: utf-8 -*-
+reinitialize
+
+# ADD PSICO EXTENSION
+import os
+import psico.fullinit
+import psico.morphing
+
+# CUSTOM PYMOL PATH
+PYMOL_TOOLKIT=os.getenv("PYMOL_TOOLKIT")
+
+# ADD CUSTOM PALETTES
+cmd.run(f"{PYMOL_TOOLKIT}/load_palette.py")
+
+# ADD CUSTOM FUNCTIONS
+# cmd.run(f"{PYMOL_TOOLKIT}/pymol_functions.py")
+
+# ADD CUSTOM STYLES
+# cmd.run(f"{PYMOL_TOOLKIT}/pymol_toolkit.py")
