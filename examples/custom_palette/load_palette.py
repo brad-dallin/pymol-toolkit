@@ -230,7 +230,7 @@ def _get_short_code(rgb: list[Any]) -> str:
 
 # Initialize menus when module is loaded by PyMOL
 if __name__ == "pymol":
-    print("PyMOL color palettes loaded and menus added.")
+    print("\n-- PyMOL color palettes loaded and menus added --\n")
 
     # Load palettes from YAML
     palette_path = find_palette_file()
@@ -240,7 +240,7 @@ if __name__ == "pymol":
 
 
 if __name__ == "__main__":
-    print("-- PyMOL custom color palettes --")
+    print("\n-- PyMOL color palettes loaded and menus added --\n")
 
     # Load palettes from YAML
     palette_path = find_palette_file()

@@ -73,11 +73,11 @@ def _set_goodsell_scene() -> None:
 
 # Initialize function when loaded into PyMOL
 if __name__ == "pymol":
-    print("-- PyMOL David Goodsell-like style function added --")
+    print("\n-- PyMOL David Goodsell-like style --\n")
 
     # Extend PyMOL commands
     cmd.extend("goodsell_spheres", goodsell_spheres)
 
 
 if __name__ == "__main__":
-    print("-- PyMOL David Goodsell-like style --")
+    print("\n-- PyMOL David Goodsell-like style --\n")
