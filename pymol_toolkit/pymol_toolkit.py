@@ -7,3 +7,6 @@ cmd.run(f"{PYMOL_TOOLKIT}/load_palette.py")
 
 # ADD GOODSELL STYLE FUNCTIONS
 cmd.run(f"{PYMOL_TOOLKIT}/goodsell_style.py")
+
+# ADD COLOR BY PLDDT FUNCTIONS
+cmd.run(f"{PYMOL_TOOLKIT}/color_by_plddt.py")
