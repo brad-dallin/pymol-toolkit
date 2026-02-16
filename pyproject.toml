@@ -6,25 +6,27 @@ version = "0.0.1"
 readme = "README.md"
 keywords = ["molecular-graphics", "computational-biology", "computational-chemistry"]
 authors = [{name = "Brad Dallin"}]
-requires-python = ">=3.9,<3.10"
+requires-python = ">3.9,<3.12"
 
-[tool.pixi.project]
+[tool.pixi.workspace]
 channels = ["conda-forge", "speleo3"]
 platforms = ["linux-64", "osx-arm64"]
 
 [tool.pixi.dependencies]
-numpy = ">=1.26,<1.27"
 pymol-open-source = ">=3.1.0,<4"
 pymol-psico = ">=4.3.0,<5"
+pyyaml = ">=6.0.3,<7"
+biopython = ">=1.86,<2"
+csb = ">=1.2.5,<2"
+prody = ">=2.5.0,<3"
+rdkit = ">=2025.9.5,<2026"
 
 [tool.pixi.pypi-dependencies]
 pymol_toolkit = { path = ".", editable = true }
-apbs-binary = ">=3.4.1.1,<4"
-types-pyyaml = ">=6.0.12.20250915,<7"
+modeller = ">=0.1.1,<0.2"
+epam-indigo = ">=1.36.1,<2"
 
 [tool.pixi.activation.env]
-PATH = "${PATH}:${PIXI_PROJECT_ROOT}/lib/python3.9/site-packages/apbs_binary/bin"
-DYLD_LIBRARY_PATH = "${PIXI_PROJECT_ROOT}/lib/python3.9/site-packages/apbs_binary/lib"
 PYMOL_TOOLKIT = "${PIXI_PROJECT_ROOT}/pymol_toolkit"
 
 [tool.pixi.environments]
@@ -39,11 +41,11 @@ test = { cmd="pytest" }
 all = { depends-on = ["fmt", "lint", "types", "test"] }
 
 [tool.pixi.feature.dev.dependencies]
-pytest = ">=8.3"
-pytest-cov = ">=6.0"
-ruff = ">=0.11"
-mypy = ">=1.15"
-pre-commit = ">=4.2"
+pytest = ">=9.0.2,<10"
+pytest-cov = ">=7.0.0,<8"
+ruff = ">=0.15.1,<0.16"
+mypy = ">=1.19.1,<2"
+pre-commit = ">=4.5.1,<5"
 
 [tool.ruff]
 line-length = 100
