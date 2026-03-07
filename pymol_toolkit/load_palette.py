@@ -186,7 +186,7 @@ def _load_yaml(file_path: str | Path) -> dict[str, dict[str, list[Any]]]:
                         vv = int(value)
                     else:
                         raise ValueError(f"Invalid integer at '{name}.{color_name}[{ii}]': {value}")
-                except (ValueError, TypeError):
+                except ValueError, TypeError:
                     raise ValueError(
                         f"Cannot convert to integer at '{name}.{color_name}[{ii}]': {value}"
                     ) from None

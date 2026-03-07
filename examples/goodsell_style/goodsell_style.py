@@ -44,7 +44,7 @@ def goodsell_surface(
     color: str = "grey95",
     transparency: str = "0.7",
 ) -> None:
-    """Style object or selection in Goodsell-like style surface with polymer cartoon ribbon layer behind.
+    """Style object or selection in Goodsell-like style surface with cartoon ribbon layer behind.
 
     Args
     ----
