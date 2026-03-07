@@ -7,16 +7,19 @@
 
 from __future__ import annotations
 
+from pymol import cmd
+
 ####################################################################################################
 ## Define
 ####################################################################################################
 
+
 def color_by_plddt(
-        obj: str,
-        very_high_threshold: float = 90.0,
-        high_threshold: float = 70.0,
-        low_threshold: float = 50.0,
-    ) -> None:
+    obj: str,
+    very_high_threshold: float = 90.0,
+    high_threshold: float = 70.0,
+    low_threshold: float = 50.0,
+) -> None:
     """Color atoms by AlphaFold pLDDT (predicted Local Distance Difference Test) score.
 
     Args
@@ -39,17 +42,14 @@ def color_by_plddt(
     _setup_plddt_colors()
 
     atom_data = []
-    cmd.iterate(obj, 'atom_data.append((index, b))', space={'atom_data': atom_data})
+    cmd.iterate(obj, "atom_data.append((index, b))", space={"atom_data": atom_data})
 
     if not atom_data:
         raise ValueError(f"No B-factor data found for selection: '{obj}'")
 
     for atom_index, b_factor in atom_data:
         color_name = _get_plddt_color_name(
-            b_factor,
-            very_high_threshold,
-            high_threshold,
-            low_threshold
+            b_factor, very_high_threshold, high_threshold, low_threshold
         )
         cmd.color(color_name, f"index {atom_index}")
 
@@ -57,10 +57,10 @@ def color_by_plddt(
 def _setup_plddt_colors() -> None:
     """Set up pLDDT color definitions in PyMOL."""
     colors = {
-        'very_high': (33, 81, 204),
-        'high': (127, 201, 239),
-        'low': (249, 220, 77),
-        'very_low': (238, 132, 83)
+        "very_high": (33, 81, 204),
+        "high": (127, 201, 239),
+        "low": (249, 220, 77),
+        "very_low": (238, 132, 83),
     }
 
     # Set PyMOL colors (convert from 0-255 to 0-1 range)
@@ -71,10 +71,8 @@ def _setup_plddt_colors() -> None:
 
 
 def _get_plddt_color_name(
-        b_factor: float,
-        very_high_threshold: float,
-        high_threshold: float,
-        low_threshold: float) -> str:
+    b_factor: float, very_high_threshold: float, high_threshold: float, low_threshold: float
+) -> str:
     """Determine the appropriate pLDDT color name based on B-factor value."""
     if b_factor > very_high_threshold:
         return "plddt_very_high"

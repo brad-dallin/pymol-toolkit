@@ -14,10 +14,11 @@ from pymol import cmd, util
 ## Define
 ####################################################################################################
 
+
 def goodsell_spheres(
     obj: str,
     transparency: str = "0",
-    ) -> None:
+) -> None:
     """Style object or selection in Goodsell-like style spheres.
 
     Args

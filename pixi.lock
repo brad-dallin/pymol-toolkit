@@ -4976,8 +4976,8 @@ packages:
 - pypi: ./
   name: pymol-toolkit
   version: 0.0.1
-  sha256: 7c9dcb7131878629ebc3396924d5ef6a5eed2036601d37eebabcbcd8b22cca6e
-  requires_python: '>3.7,<3.12'
+  sha256: beed5e562d33d36d2cbf81d8d9bd85a82cbc413120d9c84c61b062b66f1bc798
+  requires_python: '>3.9,<3.12'
 - conda: https://conda.anaconda.org/conda-forge/noarch/pyparsing-3.1.1-pyhd8ed1ab_0.conda
   sha256: 4a1332d634b6c2501a973655d68f08c9c42c0bd509c349239127b10572b8354b
   md5: 176f7d56f0cfe9008bdf1bccd7de02fb
