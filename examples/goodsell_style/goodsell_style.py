@@ -49,6 +49,7 @@ def _set_goodsell_scene() -> None:
     cmd.bg_color("white")
     cmd.set("specular", 0)
     cmd.set("depth_cue", 0)
+    cmd.set("orthoscopic", 0)
     cmd.set("opaque_background", 1)
     cmd.set("show_alpha_checker", 0)
 
