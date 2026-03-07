@@ -39,6 +39,34 @@ def goodsell_spheres(
     _set_goodsell_scene()
 
 
+def goodsell_surface(
+    obj: str,
+    color: str = "grey95",
+    transparency: str = "0.7",
+) -> None:
+    """Style object or selection in Goodsell-like style surface with polymer cartoon ribbon layer behind.
+
+    Args
+    ----
+        obj: name of object or selection to apply styling
+        transparency: transparency level between 0 to 1
+
+    Returns
+    -------
+        None
+    """
+    if not cmd.count_atoms(obj):
+        raise ValueError(f"No atoms found in: '{obj}'")
+
+    cmd.hide("everything", obj)
+    cmd.show("cartoon", obj + " and polymer")
+    cmd.show("surface", obj + " and polymer")
+    cmd.set("surface_solvent", "1")
+    cmd.set("surface_color", color, obj + " and polymer")
+    cmd.set("transparency", transparency, obj + " and polymer")
+    # _set_goodsell_scene()
+
+
 def _set_goodsell_scene() -> None:
     """Set lighting, style, and rendering parameters for David Goodsell-like style rendering."""
     # Set to max performance view
@@ -78,6 +106,7 @@ if __name__ == "pymol":
 
     # Extend PyMOL commands
     cmd.extend("goodsell_spheres", goodsell_spheres)
+    cmd.extend("goodsell_surface", goodsell_surface)
 
 
 if __name__ == "__main__":

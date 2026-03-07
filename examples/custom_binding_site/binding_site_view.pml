@@ -1,11 +1,4 @@
-# Fetch CIF
-fetch 3jrs, async=0
-remove not (alt ''+A)
-alter all, alt=''
-
-# Remove unnessary objects
-remove chain B or chain C or solvent
-
+# BINDING SITE VIEW
 set_view (\
     -0.667069554,   -0.159238651,    0.727776349,\
     -0.174948215,    0.983051777,    0.054737382,\
