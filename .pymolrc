@@ -12,4 +12,4 @@ import psico.morphing
 PYMOL_TOOLKIT=os.getenv("PYMOL_TOOLKIT")
 
 # ADD CUSTOM STYLES
-cmd.run(f"{PYMOL_TOOLKIT}/pymol_toolkit.py")
+cmd.run(f"{PYMOL_TOOLKIT}/pymol_toolkit.pml")
