@@ -78,7 +78,6 @@ if __name__ == "pymol":
 
     # Extend PyMOL commands
     cmd.extend("goodsell_spheres", goodsell_spheres)
-    cmd.extend("goodsell_surface", goodsell_surface)
 
 
 if __name__ == "__main__":
