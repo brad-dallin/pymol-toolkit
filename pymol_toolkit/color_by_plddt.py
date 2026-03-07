@@ -7,7 +7,7 @@
 
 from __future__ import annotations
 
-from pymol import cmd
+from pymol import cmd  # type: ignore[import-untyped]
 
 ####################################################################################################
 ## Define
@@ -41,7 +41,7 @@ def color_by_plddt(
 
     _setup_plddt_colors()
 
-    atom_data = []
+    atom_data: list[tuple[int, float]] = []
     cmd.iterate(obj, "atom_data.append((index, b))", space={"atom_data": atom_data})
 
     if not atom_data:

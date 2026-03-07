@@ -16,6 +16,7 @@ platforms = ["linux-64", "osx-arm64"]
 pymol-open-source = ">=3.1.0,<4"
 pymol-psico = ">=4.4.0,<5"
 pyyaml = ">=6.0.3,<7"
+types-pyyaml = ">=6.0.12.20250915,<7"
 
 [tool.pixi.pypi-dependencies]
 pymol_toolkit = { path = ".", editable = true }

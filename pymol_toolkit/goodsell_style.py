@@ -7,8 +7,8 @@
 
 from __future__ import annotations
 
-from psico.viewing import goodsell_lighting
-from pymol import cmd, util
+from psico.viewing import goodsell_lighting  # type: ignore[import-untyped]
+from pymol import cmd, util  # type: ignore[import-untyped]
 
 ####################################################################################################
 ## Define
