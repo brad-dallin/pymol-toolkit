@@ -7,8 +7,8 @@
 
 from __future__ import annotations
 
-from psico.viewing import goodsell_lighting  # type: ignore[import-untyped]
-from pymol import cmd, util  # type: ignore[import-untyped]
+from psico.viewing import goodsell_lighting
+from pymol import cmd, util
 
 ####################################################################################################
 ## Define
@@ -49,6 +49,7 @@ def _set_goodsell_scene() -> None:
     cmd.bg_color("white")
     cmd.set("specular", 0)
     cmd.set("depth_cue", 0)
+    cmd.set("orthoscopic", 0)
     cmd.set("opaque_background", 1)
     cmd.set("show_alpha_checker", 0)
 
@@ -57,7 +58,7 @@ def _set_goodsell_scene() -> None:
 
     # Goodsell-like rendering
     cmd.set("antialias", 2)
-    cmd.set("ray_trace_mode", 3)
+    cmd.set("ray_trace_mode", 1)
     cmd.set("ray_trace_gain", 0)
     cmd.set("ray_trace_color", "black")
     cmd.set("ray_trace_disco_factor", 1)

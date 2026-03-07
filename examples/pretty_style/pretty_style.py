@@ -17,7 +17,7 @@ from pymol import cmd, util
 def pretty_surface(
     obj: str,
     color: str = "grey95",
-    transparency: str = "0.7",
+    transparency: str = "0.4",
 ) -> None:
     """Style object or selection in pretty style surface with cartoon ribbon layer behind.
 
@@ -37,7 +37,6 @@ def pretty_surface(
     cmd.hide("everything", obj)
     cmd.show("cartoon", obj + " and polymer")
     cmd.show("surface", obj + " and polymer")
-    cmd.set("surface_solvent", "1")
     cmd.set("surface_color", color, obj + " and polymer")
     cmd.set("transparency", transparency, obj + " and polymer")
     _set_pretty_scene()
@@ -64,14 +63,13 @@ def _set_pretty_scene() -> None:
     # Pretty rendering
     cmd.set("antialias", 2)
     cmd.set("ray_trace_mode", 1)
-    # cmd.set("ray_trace_gain", 0)
-    # cmd.set("ray_trace_color", "black")
-    # cmd.set("ray_trace_disco_factor", 1)
-    # cmd.set("ray_trace_gain", 1.5)
+    cmd.set("ray_trace_gain", 0)
+    cmd.set("ray_trace_color", "black")
+    cmd.set("ray_trace_disco_factor", 1)
     cmd.set("ray_opaque_background", 1)
-    # cmd.set("ray_transparency_oblique")
-    # cmd.set("ray_transparency_oblique_power", 0)
-    # cmd.set("ray_transparency_contrast", 3)
+    cmd.set("ray_transparency_oblique")
+    cmd.set("ray_transparency_oblique_power", 0)
+    cmd.set("ray_transparency_contrast", 3)
 
 
 
